@@ -21,7 +21,7 @@ Return the WebhookResponse with the appropriate details as per the sequence diag
 
 ## Sequence Diagram
 
-![Figure 1](assets/sequencediagram.jpeg)
+![Figure 1](assets/sequencediagram.jpg)
 
 
 
