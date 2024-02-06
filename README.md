@@ -2,10 +2,9 @@
 
 ## Overview.
 
-* This project revolves around establishing a Dialogflow conversational bot equipped with a webhook to check order status. Additionally, a REST API, implemented in Flask, serves as the webhook, facilitating the retrieval of shipment details. The bot, through the webhook, efficiently interacts with the API, enabling users to obtain shipment information based on the provided order ID.
+* This project centers around deploying a Dialogflow conversational bot with a webhook designed to inquire about order status. Simultaneously, a REST API is implemented using Flask and hosted on Microsoft Azure as a cloud platform. This API acts as the webhook, streamlining the process of fetching shipment details. Users can seamlessly retrieve shipment information by providing the relevant order ID through the bot.
 
-The REST API is currently running as a webapp on Microsoft Azure. 
-The API URL is: [saad-orderstatusbot.azurewebsites.net](https://saad-orderstatusbot.azurewebsites.net/)
+* The REST API is currently operational as a web application on Microsoft Azure. You can access the API via the following URL: saad-orderstatusbot.azurewebsites.net. This cloud-based deployment ensures scalability, reliability, and accessibility, allowing users to enjoy efficient interactions with the bot and obtain real-time shipment updates.
 
 ## Usage.
 
