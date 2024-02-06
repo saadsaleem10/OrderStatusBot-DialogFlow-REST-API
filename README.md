@@ -6,7 +6,7 @@
 
 * The REST API, serving as the webhook, is seamlessly integrated into the Azure App Service infrastructure. This cloud-based deployment guarantees scalability, reliability, and accessibility. The Azure App Service not only hosts the Flask app efficiently but also provides features such as automatic scaling and easy management, ensuring optimal performance for users interacting with the bot. This robust deployment model on Microsoft Azure ensures users can effortlessly retrieve real-time shipment updates while experiencing a reliable and scalable conversational bot.
 
-### Accessible via the URL: saad-orderstatusbot.azurewebsites.net, 
+### Accessible via the URL: saad-orderstatusbot.azurewebsites.net
 
 ## Usage.
 
