@@ -21,6 +21,8 @@ Return the WebhookResponse with the appropriate details as per the sequence diag
 
 ## Sequence Diagram
 
+![Figure 1](assets/sequencediagram.jbeg)
+
 
 
 ## Getting Started
@@ -91,7 +93,7 @@ Python and Flask installed for the API development.
 }
 ```
 
-### Response bODY:
+### Response Body:
 ```json
 {
     "shipmentDate": "2021-08-01T00:00:00Z",
