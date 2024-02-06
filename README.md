@@ -1,9 +1,29 @@
-# Order Status Dialogflow Bot and REST API
+# Order Status Dialogflow Bot and REST API.
 
-## Overview
-This project involves creating a conversational Dialogflow bot to check order status and a REST API written in Flask to fetch shipment details. The bot interacts with the API to provide users with shipment information based on the order ID.
+## Overview.
 
-## Objectives
+This project revolves around establishing a Dialogflow conversational bot equipped with a webhook to check order status. Additionally, a REST API, implemented in Flask, serves as the webhook, facilitating the retrieval of shipment details. The bot, through the webhook, efficiently interacts with the API, enabling users to obtain shipment information based on the provided order ID.
+
+The RESTAPI is currently running as a webapp on Microsoft Azure. 
+The API URL is: [saad-orderstatusbot.azurewebsites.net](https://saad-orderstatusbot.azurewebsites.net/)
+
+## Usage.
+
+Use the /get_shipment route or https://saad-orderstatusbot.azurewebsites.net/get_shipment to get the shipment details. Use a POST request using Postman or any other API testing tool to send the order ID in the request body.
+
+The request body should be in JSON format and contain the order ID as shown below:
+```json
+{
+  "queryResult": {
+    "queryText": "my order id is 233",
+    "parameters": {
+      "number": 233
+    }
+  }
+}
+```
+
+## Objectives.
 
 ### Dialogflow Bot Setup:
 
@@ -19,21 +39,21 @@ Make a POST request to the provided API endpoint to fetch shipment date.
 Return the WebhookResponse with the appropriate details as per the sequence diagram.
 
 
-## Sequence Diagram
+## Sequence Diagram:
 
 ![Figure 1](assets/sequencediagram.jpg)
 
 
 
-## Getting Started
+## Getting Started.
 
-### Prerequisites
+### Prerequisites:
 
 Dialogflow ES account: Dialogflow Console.
 Python and Flask installed for the API development.
 
 
-### Installation
+### Installation:
 
 1. Clone the repo
    ```sh
@@ -61,19 +81,19 @@ Python and Flask installed for the API development.
 
 
 
-## Dialogflow Configuration
+## Dialogflow Configuration:
 
 1. Set up Dialogflow intent with webhook fulfillment using the ngrok URL.
 
 2. Test the bot in the Dialogflow console or any supported platform.
 
 
-## Demo Video
+## Demo Video:
 
 [![Demo Video](https://img.youtube.com/vi/VIDEO-ID/0.jpg)](https://www.youtube.com/watch?v=VIDEO-ID)
 
 
-## Optional Tasks
+## Optional Tasks:
 
 1. Convert shipment date to a human-readable format.
 

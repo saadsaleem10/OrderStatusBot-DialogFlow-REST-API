@@ -4,15 +4,19 @@ import requests
 app = Flask(__name__)
 
 
+# Define a route to the root URL
 @app.route('/', methods=['GET', 'POST'])
 def index():
     return 'This api is working!'
 
 
+# for testing
 @app.route('/index', methods=['GET', 'POST'])
 def hello():
     return 'Hello, Ngrok is working!'
 
+
+# Define a route to get the shipment date
 @app.route('/get_shipment', methods=['POST'])
 def get_shipment():
     try:
@@ -25,13 +29,15 @@ def get_shipment():
                 'fulfillmentText': 'Order ID is required'
             }), 400
 
+        #EXTERNAL API INTERACTION
+
         # Make a request to the external API to get shipment date
         api_url = 'https://orderstatusapi-dot-organization-project-311520.uc.r.appspot.com/api/getOrderStatus'
         payload = {'orderId': order_id}
         headers = {'Content-Type': 'application/json'}
         response = requests.post(api_url, json=payload, headers=headers)
 
-        # Check if the request to the external API was successful (status code 200)
+
         if response.status_code == 200:
             shipment_date = response.json().get('shipmentDate')
 
@@ -40,7 +46,8 @@ def get_shipment():
             shipment_date = datetime.fromisoformat(shipment_date[:-1])   # Remove 'Z' from the end
             shipment_date = shipment_date.strftime('%A, %d %b %Y')
             
-            # Create a Dialogflow webhook response
+            
+            #RESPONSE FORMATION
             fulfillment_response = {
                 'fulfillmentMessages': [
                     {
@@ -61,7 +68,6 @@ def get_shipment():
         }), response.status_code
 
     except Exception as e:
-        # Handle exceptions appropriately (logging, error response, etc.)
         print(f"Error processing request: {str(e)}")
         return jsonify({
             'fulfillmentText': 'An error occurred while processing the request.'
