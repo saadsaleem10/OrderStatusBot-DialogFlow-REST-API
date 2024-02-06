@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 
 @app.route('/', methods=['GET', 'POST'])
-def hello():
+def index():
     return 'This api is working!'
 
 
