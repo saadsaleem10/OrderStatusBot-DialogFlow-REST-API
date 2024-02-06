@@ -4,6 +4,11 @@ import requests
 app = Flask(__name__)
 
 
+@app.route('/', methods=['GET', 'POST'])
+def hello():
+    return 'This api is working!'
+
+
 @app.route('/index', methods=['GET', 'POST'])
 def hello():
     return 'Hello, Ngrok is working!'
